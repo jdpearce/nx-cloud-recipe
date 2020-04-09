@@ -52,7 +52,7 @@ jobs:
       - setup
       - run:
           name: Build all affected projects
-          command: npx nx affected:build --base=master~1 --head=master
+          command: npx nx affected:build --base=master --head=HEAD
 
   test:
     executor:
@@ -61,7 +61,7 @@ jobs:
       - setup
       - run:
           name: Run all affected tests
-          command: npx nx affected:test --base=master~1 --head=master
+          command: npx nx affected:test --base=master --head=HEAD
 
 workflows:
   build-and-test:
